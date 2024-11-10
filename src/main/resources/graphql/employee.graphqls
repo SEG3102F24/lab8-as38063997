@@ -1,1 +1,19 @@
+extend type Query{
+    employee(employeeId :Int!): [Enployee]
+}
 
+type Employee{
+    employeeIdP: Int!
+    employeeName: String!
+    employeedateofbirth: String!
+    employeeContact: String!
+    employeeSalary: Float!
+    employeeGender: String!
+    employeeEmail: String!
+}
+
+extend type Mutation{
+    addEmployee(employeeName: String!, employeedateofbirth: String!, employeeContact: String!, employeeSalary: Float!, employeeGender: String!, employeeEmail: String!): Employee
+    updateEmployee(employeeId: Int!, employeeName: String!, employeedateofbirth: String!, employeeContact: String!, employeeSalary: Float!, employeeGender: String!, employeeEmail: String!): Employee
+    deleteEmployee(employeeId: Int!): Employee
+}
